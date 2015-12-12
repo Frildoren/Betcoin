@@ -112,3 +112,11 @@ a.desc:after {
     margin-right: 5px; 
 }
 
+#total-money {
+    margin-left: 193px;
+}
+
+#pending-money {
+    margin-left: 71px;
+}
+
