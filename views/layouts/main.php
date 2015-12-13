@@ -10,6 +10,12 @@ use app\assets\AppAsset;
 use kartik\sidenav\SideNav;
 use yii\helpers\Url;
 
+use kartik\icons\Icon;
+use kartik\icons\FontAwesomeAsset;
+use kartik\icons\WhhgAsset;
+
+Icon::map($this, Icon::WHHG);
+
 AppAsset::register($this);
 
 $type = SideNav::TYPE_DEFAULT;
@@ -17,7 +23,7 @@ $heading = '<span id="sports-icon" class="glyphicon glyphicon-"></span> Deportes
 $items = [
 	// Important: you need to specify url as 'controller/action',
 	// not just as 'controller' even if default action is used.
-	['label' => 'Fútbol', 'icon' => '', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
+	['label' => 'Fútbol', 'icon' => Icon::show('icon-football-soccer'), 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
         ['label' => 'Baloncesto', 'icon' => '', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
         ['label' => 'Fórmula 1', 'icon' => 'road', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
         ['label' => 'Béisbol', 'icon' => '', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],

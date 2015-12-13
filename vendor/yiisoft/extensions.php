@@ -75,4 +75,22 @@ return array (
       '@kartik/sidenav' => $vendorDir . '/kartik-v/yii2-widget-sidenav',
     ),
   ),
+  'yiisoft/yii2-jui' => 
+  array (
+    'name' => 'yiisoft/yii2-jui',
+    'version' => '2.0.4.0',
+    'alias' => 
+    array (
+      '@yii/jui' => $vendorDir . '/yiisoft/yii2-jui',
+    ),
+  ),
+  'kartik-v/yii2-icons' => 
+  array (
+    'name' => 'kartik-v/yii2-icons',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@kartik/icons' => $vendorDir . '/kartik-v/yii2-icons',
+    ),
+  ),
 );
