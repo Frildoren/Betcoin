@@ -13,28 +13,37 @@ use yii\helpers\Url;
 AppAsset::register($this);
 
 $type = SideNav::TYPE_DEFAULT;
-$heading = '<span class="glyphicon glyphicons-soccer-ball"></span> Deportes';
+$heading = '<span id="sports-icon" class="glyphicon glyphicon-"></span> Deportes';
 $items = [
 	// Important: you need to specify url as 'controller/action',
 	// not just as 'controller' even if default action is used.
-	['label' => 'Home', 'icon' => 'home', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
-	['label' => 'Books', 'icon' => 'book', 'items' => [
-			['label' => '<span class="pull-right badge">10</span> New Arrivals', 'url' => Url::to(['/site/new-arrivals', 'type' => $type]), 'active' => false],
-			['label' => '<span class="pull-right badge">5</span> Most Popular', 'url' => Url::to(['/site/most-popular', 'type' => $type]), 'active' => false],
-			['label' => 'Read Online', 'icon' => 'cloud', 'items' => [
-					['label' => 'Online 1', 'url' => Url::to(['/site/online-1', 'type' => $type]), 'active' => false],
-					['label' => 'Online 2', 'url' => Url::to(['/site/online-2', 'type' => $type]), 'active' => false]
-				]],
-		]],
-	['label' => '<span class="pull-right badge">3</span> Categories', 'icon' => 'tags', 'items' => [
-			['label' => 'Fiction', 'url' => Url::to(['/site/fiction', 'type' => $type]), 'active' => false],
-			['label' => 'Historical', 'url' => Url::to(['/site/historical', 'type' => $type]), 'active' => false],
-			['label' => '<span class="pull-right badge">2</span> Announcements', 'icon' => 'bullhorn', 'items' => [
-					['label' => 'Event 1', 'url' => Url::to(['/site/event-1', 'type' => $type]), 'active' => false],
-					['label' => 'Event 2', 'url' => Url::to(['/site/event-2', 'type' => $type]), 'active' => false]
-				]],
-		]],
-	['label' => 'Profile', 'icon' => 'user', 'url' => Url::to(['/site/profile', 'type' => $type]), 'active' => false],
+	['label' => 'Fútbol', 'icon' => '', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
+        ['label' => 'Baloncesto', 'icon' => '', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
+        ['label' => 'Fórmula 1', 'icon' => 'road', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
+        ['label' => 'Béisbol', 'icon' => '', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
+        ['label' => 'Rugby', 'icon' => '', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
+        ['label' => 'Tenis', 'icon' => '', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
+        ['label' => 'Fútbol americano', 'icon' => '', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
+        ['label' => 'Balonmano', 'icon' => '', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
+        ['label' => 'Natación', 'icon' => '', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
+        ['label' => 'Waterpolo', 'icon' => '', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
+//	['label' => 'Books', 'icon' => 'book', 'items' => [
+//			['label' => '<span class="pull-right badge">10</span> New Arrivals', 'url' => Url::to(['/site/new-arrivals', 'type' => $type]), 'active' => false],
+//			['label' => '<span class="pull-right badge">5</span> Most Popular', 'url' => Url::to(['/site/most-popular', 'type' => $type]), 'active' => false],
+//			['label' => 'Read Online', 'icon' => 'cloud', 'items' => [
+//					['label' => 'Online 1', 'url' => Url::to(['/site/online-1', 'type' => $type]), 'active' => false],
+//					['label' => 'Online 2', 'url' => Url::to(['/site/online-2', 'type' => $type]), 'active' => false]
+//				]],
+//		]],
+//	['label' => '<span class="pull-right badge">3</span> Categories', 'icon' => 'tags', 'items' => [
+//			['label' => 'Fiction', 'url' => Url::to(['/site/fiction', 'type' => $type]), 'active' => false],
+//			['label' => 'Historical', 'url' => Url::to(['/site/historical', 'type' => $type]), 'active' => false],
+//			['label' => '<span class="pull-right badge">2</span> Announcements', 'icon' => 'bullhorn', 'items' => [
+//					['label' => 'Event 1', 'url' => Url::to(['/site/event-1', 'type' => $type]), 'active' => false],
+//					['label' => 'Event 2', 'url' => Url::to(['/site/event-2', 'type' => $type]), 'active' => false]
+//				]],
+//		]],
+//	['label' => 'Profile', 'icon' => 'user', 'url' => Url::to(['/site/profile', 'type' => $type]), 'active' => false],
 ];
 ?>
 <?php $this->beginPage() ?>
