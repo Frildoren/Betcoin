@@ -120,3 +120,7 @@ a.desc:after {
     margin-left: 71px;
 }
 
+#money {
+    float: right;
+    margin-right: 20px;
+}
