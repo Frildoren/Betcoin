@@ -120,7 +120,19 @@ a.desc:after {
     margin-left: 71px;
 }
 
-#money {
+/*#money {
     float: right;
     margin-right: 20px;
+}*/
+
+.saldo-div > div {
+    width: 50%;
+}
+
+.money-quantity {
+    float: left;
+}
+
+.money-button {
+    float: right;
 }
