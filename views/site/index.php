@@ -17,14 +17,14 @@ $this->title = Yii::$app->params['name'];
         
     </div>
     
-    <div class="saldo-div">
-        <div class="money-quantity">
+    <div class="saldo-div"> 
+        <div>
             <h3><b>Saldo</b> <span id="total-money">0€</span></h3>
             <h3><b>Saldo pendiente</b> <span id="pending-money">0€</span></h3>
         </div>
          
-         <div class="money-button">
-            <button type="button" class="btn-lg  btn btn-info"> 
+         <div>
+            <button type="button" class="btn-lg btn btn-info"> 
                 <span class="glyphicon glyphicon-pencil"></span> Gestionar saldo
             </button>
         </div>
