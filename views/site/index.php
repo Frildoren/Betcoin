@@ -24,7 +24,7 @@ $this->title = Yii::$app->params['name'];
         </div>
          
          <div>
-            <button type="button" class="btn-lg btn btn-info"> 
+            <button type="button" class="btn-lg btn btn-info money-button"> 
                 <span class="glyphicon glyphicon-pencil"></span> Gestionar saldo
             </button>
         </div>

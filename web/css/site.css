@@ -126,13 +126,13 @@ a.desc:after {
 }*/
 
 .saldo-div > div {
-    width: 50%;
-}
-
-.money-quantity {
-    float: left;
+    width: 49%;
+    display: inline-block;
 }
 
 .money-button {
     float: right;
 }
+
+
+

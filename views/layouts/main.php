@@ -21,18 +21,31 @@ AppAsset::register($this);
 $type = SideNav::TYPE_DEFAULT;
 $heading = '<span id="sports-icon" class="glyphicon glyphicon-"></span> Deportes';
 $items = [
-	// Important: you need to specify url as 'controller/action',
-	// not just as 'controller' even if default action is used.
-	['label' => Icon::show('football-soccer').'Fútbol', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
-        ['label' => 'Baloncesto', 'icon' => '', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
-        ['label' => 'Fórmula 1', 'icon' => 'road', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
-        ['label' => 'Béisbol', 'icon' => '', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
-        ['label' => 'Rugby', 'icon' => '', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
-        ['label' => 'Tenis', 'icon' => '', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
-        ['label' => 'Fútbol americano', 'icon' => '', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
-        ['label' => 'Balonmano', 'icon' => '', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
-        ['label' => 'Natación', 'icon' => '', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
-        ['label' => 'Waterpolo', 'icon' => '', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
+    
+    // Important: you need to specify url as 'controller/action',
+    // not just as 'controller' even if default action is used.
+    ['label' => Icon::show('football-soccer').'Fútbol', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
+    ['label' => Icon::show('basketball').'Baloncesto', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
+    ['label' => Icon::show('raceflag').'Fórmula 1', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
+    ['label' => Icon::show('usfootball').'Rugby', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
+    ['label' => Icon::show('tennis').'Tenis', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
+    ['label' => Icon::show('usfootball').'Fútbol americano', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
+    ['label' => Icon::show('bowlingpins').'Bolos', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
+    ['label' => Icon::show('boxing').'Boxeo', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
+    ['label' => Icon::show('bow').'Tiro con arco', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
+    ['label' => Icon::show('cricket').'Cricket', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
+    ['label' => Icon::show('curling').'Curling', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
+    ['label' => Icon::show('dart').'Dardos', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
+    ['label' => Icon::show('golf').'Golf', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
+    ['label' => Icon::show('hockey').'Hockey', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
+    ['label' => Icon::show('tabletennis-pingpong').'Ping Pong', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
+    ['label' => Icon::show('knight').'Ajedrez', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
+    ['label' => Icon::show('spades').'Póker', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
+
+
+
+    
+
 //	['label' => 'Books', 'icon' => 'book', 'items' => [
 //			['label' => '<span class="pull-right badge">10</span> New Arrivals', 'url' => Url::to(['/site/new-arrivals', 'type' => $type]), 'active' => false],
 //			['label' => '<span class="pull-right badge">5</span> Most Popular', 'url' => Url::to(['/site/most-popular', 'type' => $type]), 'active' => false],
