@@ -4,6 +4,11 @@
 
 use miloschuman\highcharts\Highcharts;
 
+use kartik\icons\Icon;
+use kartik\icons\WhhgAsset;
+
+Icon::map($this, Icon::WHHG);
+
 $this->title = Yii::$app->params['name'];
 ?>
 <div class="site-index">
@@ -25,7 +30,7 @@ $this->title = Yii::$app->params['name'];
          
          <div>
             <button type="button" class="btn-lg btn btn-info money-button"> 
-                <span class="glyphicon glyphicon-pencil"></span> Gestionar saldo
+                <?= Icon::show('value-coins') ?> Gestionar saldo
             </button>
         </div>
     </div>
