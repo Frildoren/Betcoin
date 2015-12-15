@@ -52,7 +52,10 @@ class SiteController extends Controller
 		if(\Yii::$app->user->isGuest){
 			return $this->redirect(['login']); 
 		}
-        return $this->render('index');
+        return $this->render('index', [
+			'saldo'=>0,
+			'pendiente'=>0,
+		]);
     }
 
     public function actionLogin()

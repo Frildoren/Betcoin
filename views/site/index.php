@@ -24,8 +24,8 @@ $this->title = Yii::$app->params['name'];
         
     <div class="saldo-div"> 
         <div>
-            <h3><b>Saldo</b> <span id="total-money">0€</span></h3>
-            <h3><b>Saldo pendiente</b> <span id="pending-money">0€</span></h3>
+            <h3><b>Saldo</b> <span id="total-money"><?= $saldo ?>€</span></h3>
+            <h3><b>Saldo pendiente</b> <span id="pending-money"><?= $pendiente ?>€</span></h3>
         </div>
          
          <div>
@@ -33,6 +33,7 @@ $this->title = Yii::$app->params['name'];
                 <?= Icon::show('value-coins') ?> Gestionar saldo
             </button>
         </div>
+		<div class="clearfix"></div>
     </div>
 		<br>
 	<?php
