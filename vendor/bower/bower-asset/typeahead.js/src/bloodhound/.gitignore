@@ -1,0 +1,8 @@
+/bloodhound.js
+/lru_cache.js
+/options_parser.js
+/persistent_storage.js
+/search_index.js
+/tokenizers.js
+/transport.js
+/version.js

@@ -2,6 +2,8 @@
 
 /* @var $this yii\web\View */
 
+use miloschuman\highcharts\Highcharts;
+
 $this->title = Yii::$app->params['name'];
 ?>
 <div class="site-index">
@@ -12,11 +14,9 @@ $this->title = Yii::$app->params['name'];
 
     <div class="jumbotron">
         <img class="profile-pic" src="assets/profile_pic.jpg"/>
-        
+
         <h2>John Cena</h2>
         
-    </div>
-    
     <div class="saldo-div"> 
         <div>
             <h3><b>Saldo</b> <span id="total-money">0€</span></h3>
@@ -29,5 +29,25 @@ $this->title = Yii::$app->params['name'];
             </button>
         </div>
     </div>
+		<br>
+	<?php
+	
+		echo Highcharts::widget([
+			'options' => [
+			   'title' => ['text' => 'Estadística de saldo'],
+			   'xAxis' => [
+				  'categories' => ['Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
+			   ],
+			   'yAxis' => [
+				  'title' => ['text' => '€']
+			   ],
+			   'series' => [
+					['name' => 'Saldo disponible', 'data' => [10, 25, 15, 90]],
+					['name' => 'Saldo retenido', 'data' => [15, 10, 75, 90]],
+			   ]
+			]
+		 ]);
+	
+	?>
     
 </div>

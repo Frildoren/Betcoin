@@ -2,3 +2,17 @@
 vendor/
 composer.lock
 composer.phar
+/AnimateAsset.php
+/AssetBundle.php
+/CHANGE.md
+/Config.php
+/Html5Input.php
+/Html5InputAsset.php
+/InputWidget.php
+/Module.php
+/PluginAssetBundle.php
+/README.md
+/TranslationTrait.php
+/Widget.php
+/WidgetAsset.php
+/WidgetTrait.php

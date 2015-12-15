@@ -1,0 +1,14 @@
+/bloodhound_spec.js
+/ci
+/dataset_view_spec.js
+/dropdown_view_spec.js
+/event_emitter_spec.js
+/highlight_spec.js
+/input_view_spec.js
+/lru_cache_spec.js
+/persistent_storage_spec.js
+/playground.html
+/search_index_spec.js
+/tokenizers_spec.js
+/transport_spec.js
+/typeahead_view_spec.js
