@@ -46,6 +46,28 @@ class SiteController extends Controller
             ],
         ];
     }
+	
+	private $session = null;
+	private function getSession(){
+		if($this->session === null){
+			$session = new \yii\web\Session;
+			$session->open();
+		}
+		return $this->session;
+	}
+	
+	private function getVar($v){
+		$session = $this->getSession();
+		
+		if(isset($session[$v])){
+			return $session[$v];
+		}
+	}
+	
+	private function setVar($i, $v){
+		$session = $this->getSession();
+		$session[$i] = $v;
+	}
 
     public function actionIndex()
     {
@@ -53,8 +75,8 @@ class SiteController extends Controller
 			return $this->redirect(['login']); 
 		}
         return $this->render('index', [
-			'saldo'=>0,
-			'pendiente'=>0,
+			'saldo'=>intval($this->getVar('saldo')),
+			'pendiente'=>intval($this->getVar('pendiente')),
 		]);
     }
 
