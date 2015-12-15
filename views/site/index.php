@@ -13,9 +13,9 @@ $this->title = Yii::$app->params['name'];
 ?>
 <div class="site-index">
     
-    <button type="button" id="edit-profile" class="btn-md btn btn-info ">
+    <a type="button" id="edit-profile" class="btn-md btn btn-info ">
         <span class="glyphicon glyphicon-pencil"></span> Editar 
-    </button> 
+    </a> 
 
     <div class="jumbotron">
         <img class="profile-pic" src="assets/profile_pic.jpg"/>
@@ -29,9 +29,11 @@ $this->title = Yii::$app->params['name'];
         </div>
          
          <div>
-            <button type="button" class="btn-lg btn btn-info money-button"> 
-                <?= Icon::show('value-coins') ?> Gestionar saldo
-            </button>
+             <?php 
+             echo yii\helpers\Html::a(Icon::show('value-coins')."Gestionar saldo", ['/site/saldo'], [
+                 'class' => "btn-lg btn btn-info money-button",
+             ]);
+             ?>
         </div>
 		<div class="clearfix"></div>
     </div>
