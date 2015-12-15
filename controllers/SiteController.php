@@ -128,6 +128,7 @@ class SiteController extends Controller
         return $this->render('saldo', [
             'saldo' => 0,
             'pendiente' => 0,
+            'metodos' => ['1234-1234-1234-1234',],
         ]);
     }
 }

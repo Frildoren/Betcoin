@@ -163,3 +163,12 @@ a.desc:after {
 .site-saldo .header-saldo > .btn {
     float: right;
 }
+
+.metodos {
+    padding: 10px;
+}
+
+.metodos > *{
+    margin: 10px;
+}
+
