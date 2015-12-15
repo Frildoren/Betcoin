@@ -108,8 +108,8 @@ a.desc:after {
     right: 20px;
 }
 
-#edit-profile span {
-    margin-right: 5px; 
+.btn > i {
+    margin-right: 5px;
 }
 
 #total-money {
@@ -138,7 +138,28 @@ a.desc:after {
     width: 50%;
 }
 
+.site-saldo > table tr:nth-child(2) {
+    border-bottom: 1px solid black;
+}
+
+.site-saldo > table tr > td:last-child {
+    text-align: right;
+}
+
 .site-saldo td{
     font-size: 1.5em;
     font-weight: 500;
+}
+
+.site-saldo .header-saldo {
+    border-bottom: 1px dotted;
+    padding-bottom: 5px;
+}
+
+.site-saldo .header-saldo > h1 {
+        display: inline;
+}
+
+.site-saldo .header-saldo > .btn {
+    float: right;
 }

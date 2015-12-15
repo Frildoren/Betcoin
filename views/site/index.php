@@ -14,7 +14,7 @@ $this->title = Yii::$app->params['name'];
 <div class="site-index">
     
     <a type="button" id="edit-profile" class="btn-md btn btn-info ">
-        <span class="glyphicon glyphicon-pencil"></span> Editar 
+        <i class="glyphicon glyphicon-pencil"></i> Editar 
     </a> 
 
     <div class="jumbotron">
