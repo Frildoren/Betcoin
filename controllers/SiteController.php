@@ -103,6 +103,9 @@ class SiteController extends Controller
     }
     
     public function actionSaldo() {
-        return $this->render('saldo');
+        return $this->render('saldo', [
+            'saldo' => 0,
+            'pendiente' => 0,
+        ]);
     }
 }

@@ -134,5 +134,11 @@ a.desc:after {
     float: right;
 }
 
+.site-saldo > table {
+    width: 50%;
+}
 
-
+.site-saldo td{
+    font-size: 1.5em;
+    font-weight: 500;
+}

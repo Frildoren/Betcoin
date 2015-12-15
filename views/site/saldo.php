@@ -4,15 +4,20 @@
 
 use yii\helpers\Html; 
 
-$this->title = 'Saldo';
+$this->title = 'Gestionar saldo';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-about">
+<div class="site-saldo">
     <h1><?= Html::encode($this->title) ?></h1>
+    <table>
+        <tr>
+            <td>Saldo actual</td>
+            <td><?=$saldo?></td>
+        </tr>
+        <tr>
+            <td>Saldo pendiente</td>
+            <td><?=$pendiente?></td>
+        </tr>
+    </table>
 
-    <p>
-        This is the About page. You may modify the following file to customize its content:
-    </p>
-
-    <code><?= __FILE__ ?></code>
 </div>
