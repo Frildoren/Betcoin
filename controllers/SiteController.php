@@ -217,7 +217,7 @@ class SiteController extends Controller
 		$bets = $this->getVar('bets');
 		
 		return $this->render('apuestas', [
-			'bets' => $bets
+			'bets' => $bets ? $bets : []
 		]);
 	}
 }
