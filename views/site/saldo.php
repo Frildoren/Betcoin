@@ -34,10 +34,49 @@ $this->title = 'Gestionar saldo';
 
     <div class="header-saldo"> 
         <h1>Método de pago</h1>
-        <a class="btn-md btn btn-success">
+        <a class="btn-md btn btn-success" data-toggle="modal" data-target="#myModal">
             <i class="glyphicon glyphicon-plus"></i> Añadir
         </a>
     </div>
+	
+	<!-- Modal -->
+	<div id="myModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<?= Html::beginForm("", "post", [
+				'class'=>"money-form"
+			]) ?>
+			
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Nuevo método de pago</h4>
+				</div>
+				<div style="padding: 1em">
+					<div class="input-group insert-money">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
+					<input name="card" type="text" class="form-control" placeholder="Número de tarjeto">
+					</div>
+					
+					<div class="input-group insert-money">
+					<span class="input-group-addon">CDC</span>
+					<input name="cdc" type="text" class="form-control" placeholder="CDC">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<?= Html::a(kartik\icons\Icon::show('paypal')."Paypal", "https://www.paypal.com", [
+						'class' => 'btn-md btn btn-default pull-left',
+						'target' => '_blank',
+					]) ?>
+					<button type="submit" class="btn btn-success">Aceptar</button>
+				</div>
+			</div>
+			
+			<?= Html::endForm() ?>
+
+		</div>
+	</div>
     
     <?php 
     
@@ -67,9 +106,9 @@ $this->title = 'Gestionar saldo';
     
     <div class="input-group insert-money">
       <span class="input-group-addon">€</span>
-      <input type="text" class="form-control" placeholder="Cantidad">
+      <input name="quantity" type="text" class="form-control" placeholder="Cantidad">
       <div class="input-group-btn">
-          <select class="form-control" style="min-width: 200px">
+          <select name="method" class="form-control" style="min-width: 200px">
               <option>Método de pago</option>
             <?php foreach ($metodos as $m) {
                echo Html::tag("option", $m);
@@ -79,7 +118,7 @@ $this->title = 'Gestionar saldo';
       </div><!-- /btn-group -->
     </div><!-- /input-group -->
 
-    <input type="text" class="form-control promo-code" placeholder="Código promocional">
+    <input name="code" type="text" class="form-control promo-code" placeholder="Código promocional">
 
     <button class="btn-md btn btn-success" style="margin-top: 10px" type="submit">
         <i class="glyphicon glyphicon-arrow-up"></i>Ingresar        

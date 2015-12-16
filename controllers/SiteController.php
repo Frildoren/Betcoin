@@ -50,8 +50,8 @@ class SiteController extends Controller
 	private $session = null;
 	private function getSession(){
 		if($this->session === null){
-			$session = new \yii\web\Session;
-			$session->open();
+			$this->session = new \yii\web\Session;
+			$this->session->open();
 		}
 		return $this->session;
 	}
@@ -126,16 +126,27 @@ class SiteController extends Controller
     
     public function actionSaldo() {
 		
-		print_r(Yii::$app->request->post());
+		if(Yii::$app->request->post()){
+			$this->setVar('saldo', intval($this->getVar('saldo')) + intval(Yii::$app->request->post('quantity')));
+			if(Yii::$app->request->post('card')){
+				$methods = $this->getVar('methods');
+				$methods[] = Yii::$app->request->post('card');
+				$this->setVar('methods', $methods);
+			}
+		}
 		
         return $this->render('saldo', [
-            'saldo' => $this->getVar('saldo'),
-            'pendiente' => $this->getVar('pendiente'),
-            'metodos' => ['1234-1234-1234-1234',],
+            'saldo' => intval($this->getVar('saldo')),
+            'pendiente' => intval($this->getVar('pendiente')),
+            'metodos' => $this->getVar('methods') ? $this->getVar('methods') : [],
         ]);
     }
-    
-    public function actionApuesta() {
-        return $this->render('apuesta');
-    }
+	
+	public function actionBet($m){
+		return $this->render('bet', [
+			'a'=>$m[0],
+			'b'=>$m[1],
+			'date'=>$m[2]
+		]);
+	}
 }
