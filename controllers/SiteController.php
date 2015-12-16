@@ -131,4 +131,8 @@ class SiteController extends Controller
             'metodos' => ['1234-1234-1234-1234',],
         ]);
     }
+    
+    public function actionApuesta() {
+        return $this->render('apuesta');
+    }
 }
