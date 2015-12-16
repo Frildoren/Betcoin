@@ -94,16 +94,22 @@ $items = [
 				['label' => 'Mis apuestas', 'url' => ['/site/mis-apuestas']],
 			],
 		]);
+		
+		if(Yii::$app->user->isGuest){
+			$navItems = [
+				['label' => 'Login', 'url' => ['/site/login']]
+			];
+		} else {
+			$navItems = [
+				['label' => 'Mi cuenta', //Yii::$app->user->identity->username,
+				'url' => ['/site/index']],
+				['label' => 'Logout', 'url'=>Url::to(['site/logout']), 'options'=>['data-method'=>'post']]
+			];
+		}
+		
 		echo Nav::widget([
 			'options' => ['class' => 'navbar-nav navbar-right'],
-			'items' => [
-				Yii::$app->user->isGuest ?
-						['label' => 'Login', 'url' => ['/site/login']] :
-						[
-					'label' => 'Mi cuenta', //Yii::$app->user->identity->username,
-					'url' => ['/site/index'],
-						],
-			],
+			'items' => $navItems,
 		]);
 		NavBar::end();
 		?>
