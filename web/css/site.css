@@ -135,7 +135,7 @@ a.desc:after {
 }
 
 .site-saldo > table {
-    width: 50%;
+    min-width: 50%;
 }
 
 .site-saldo > table tr:nth-child(2) {
@@ -172,3 +172,16 @@ a.desc:after {
     margin: 10px;
 }
 
+.insert-money {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.money-form {
+    max-width: 50%;
+}
+
+.line > *{
+    display: inline-block;
+    width: auto;
+}

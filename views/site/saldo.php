@@ -54,10 +54,34 @@ $this->title = 'Gestionar saldo';
         
     ?>
     
+    <div style="height: 40px"></div>
+    
     <div class="header-saldo"> 
         <h1>Ingresar</h1>
     </div>    
     
     
+    <?= Html::beginForm("", "post", [
+        'class'=>"money-form"
+    ]) ?>
+        <div class="input-group insert-money">
+          <span class="input-group-addon">€</span>
+          <input type="text" class="form-control" placeholder="Cantidad">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" 
+                aria-haspopup="true" aria-expanded="false">Método de pago<span class="caret"></span></button>
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li><a href="#">Action</a></li>
+            </ul>
+          </div><!-- /btn-group -->
+        </div><!-- /input-group -->
+
+        <input type="text" class="form-control promo-code" placeholder="Código promocional">
+
+        <button class="btn-md btn btn-success" style="margin-top: 10px" type="submit">
+                  <i class="glyphicon glyphicon-arrow-up"></i>Ingresar        
+        </button>
+    
+     <?= Html::endForm() ?>
 
 </div>
