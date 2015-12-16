@@ -21,7 +21,8 @@
         "kartik-v/yii2-widget-sidenav": "*",
         "kartik-v/yii2-icons": "@dev",
         "miloschuman/yii2-highcharts-widget": "*",
-        "newerton/yii2-fancybox": "dev-master"
+        "newerton/yii2-fancybox": "dev-master",
+        "kartik-v/yii2-widget-growl": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
