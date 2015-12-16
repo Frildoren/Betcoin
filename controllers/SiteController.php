@@ -127,8 +127,24 @@ class SiteController extends Controller
     public function actionSaldo() {
 		
 		if(Yii::$app->request->post()){
+			
+			if(null!==(Yii::$app->request->post('method')) && Yii::$app->request->post('method') == 0){
+					
+				Yii::$app->getSession()->setFlash('danger', [
+					'type' => 'danger',
+					'duration' => 5000,
+					'icon' => 'glyphicon glyphicon-alert',
+					'title' => 'Error',
+					'message' => 'El método de pago es incorrecto',
+					'positonY' => 'top',
+					'positonX' => 'center'
+				]);
+
+				return $this->refresh();
+			}
+			
 			$this->setVar('saldo', intval($this->getVar('saldo')) + intval(Yii::$app->request->post('quantity')));
-			if(Yii::$app->request->post('card')){
+			if(Yii::$app->request->post('card')){				
 				$methods = $this->getVar('methods');
 				$methods[] = Yii::$app->request->post('card');
 				$this->setVar('methods', $methods);
@@ -147,10 +163,61 @@ class SiteController extends Controller
 	}
 	
 	public function actionBet(array $m){
+		
+		if(Yii::$app->request->post()){
+			$suma = 0;
+			foreach(Yii::$app->request->post('quantity') as $q){
+				$suma += intval($q);
+			}
+			
+			if($suma > intval($this->getVar('saldo'))){
+				Yii::$app->getSession()->setFlash('success', [
+					'type' => 'danger',
+					'duration' => 5000,
+					'icon' => 'glyphicon glyphicon-alert',
+					'title' => 'Saldo insuficiente',
+					'message' => 'No tiene suficiente saldo en su cuenta para realizar esa apuesta',
+					'positonY' => 'top',
+					'positonX' => 'center'
+				]);
+				return $this->refresh();
+			} else {
+				$this->setVar('saldo', intval($this->getVar('saldo')) - $suma);
+				$this->setVar('pendiente', intval($this->getVar('pendiente')) + $suma);
+
+				$bets = $this->getVar('bets');
+				$bet = $m;
+				$bet['quantity'] = Yii::$app->request->post('quantity');
+				$bets[] = $bet;
+				$this->setVar('bets', $bets);
+				
+				Yii::$app->getSession()->setFlash('success', [
+					'type' => 'success',
+					'duration' => 5000,
+					'icon' => 'glyphicon glyphicon-ok',
+					'title' => 'Hecho',
+					'message' => 'Apuesta realizada correctamente',
+					'positonY' => 'top',
+					'positonX' => 'center'
+				]);
+				return $this->redirect(['apuestas']);
+			}
+		}
+		
 		return $this->render('bet', [
 			'a'=>$m[0],
 			'b'=>$m[1],
 			'date'=>$m[2]
+		]);
+	}
+	
+	
+	public function actionApuestas(){
+		
+		$bets = $this->getVar('bets');
+		
+		return $this->render('apuestas', [
+			'bets' => $bets
 		]);
 	}
 }
