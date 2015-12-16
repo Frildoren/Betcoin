@@ -103,7 +103,7 @@ $items = [
 			$navItems = [
 				['label' => 'Mi cuenta', //Yii::$app->user->identity->username,
 				'url' => ['/site/index']],
-				['label' => 'Logout', 'url'=>Url::to(['site/logout']), 'options'=>['data-method'=>'post']]
+				['label' => 'Logout', 'url'=>Url::to(['site/logout']), 'linkOptions'=>['data-method'=>'post']]
 			];
 		}
 		
