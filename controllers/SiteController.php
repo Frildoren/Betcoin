@@ -125,9 +125,12 @@ class SiteController extends Controller
     }
     
     public function actionSaldo() {
+		
+		print_r(Yii::$app->request->post());
+		
         return $this->render('saldo', [
-            'saldo' => 0,
-            'pendiente' => 0,
+            'saldo' => $this->getVar('saldo'),
+            'pendiente' => $this->getVar('pendiente'),
             'metodos' => ['1234-1234-1234-1234',],
         ]);
     }
