@@ -109,7 +109,7 @@ $this->title = 'Gestionar saldo';
       <input name="quantity" type="text" class="form-control" placeholder="Cantidad">
       <div class="input-group-btn">
           <select name="method" class="form-control" style="min-width: 200px">
-              <option>Método de pago</option>
+              <option value="0">Método de pago</option>
             <?php foreach ($metodos as $m) {
                echo Html::tag("option", $m);
             }

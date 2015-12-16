@@ -91,7 +91,7 @@ $items = [
 			'options' => ['class' => 'navbar-nav'],
 			'items' => [
 				['label' => 'Resultados', 'url' => ['/site/resultados']],
-				['label' => 'Mis apuestas', 'url' => ['/site/mis-apuestas']],
+				['label' => 'Mis apuestas', 'url' => ['/site/apuestas']],
 			],
 		]);
 		
@@ -131,6 +131,28 @@ $items = [
 						'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
 					])
 					?>
+					
+					<?php foreach (Yii::$app->session->getAllFlashes() as $message):; ?>
+					
+					<?php
+					echo \kartik\growl\Growl::widget([
+						'type' => (!empty($message['type'])) ? $message['type'] : 'danger',
+						'title' => (!empty($message['title'])) ? ' <b>'.Html::encode($message['title']).'</b>' : 'Title Not Set!',
+						'icon' => (!empty($message['icon'])) ? $message['icon'] : 'fa fa-info',
+						'body' => (!empty($message['message'])) ? Html::encode($message['message']) : 'Message Not Set!',
+						'showSeparator' => true,
+						'delay' => 1, //This delay is how long before the message shows
+						'pluginOptions' => [
+							'delay' => (!empty($message['duration'])) ? $message['duration'] : 3000, //This delay is how long the message shows for
+							'placement' => [
+								'from' => (!empty($message['positonY'])) ? $message['positonY'] : 'top',
+								'align' => (!empty($message['positonX'])) ? $message['positonX'] : 'right',
+							]
+						]
+					]);
+					?>
+				<?php endforeach; ?>
+					
 					<?= $content ?>
 				</div>
 			</div>
