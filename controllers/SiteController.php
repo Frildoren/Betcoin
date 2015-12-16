@@ -142,7 +142,11 @@ class SiteController extends Controller
         ]);
     }
 	
-	public function actionBet($m){
+	public function actionApuesta(){
+		return $this->render('apuesta');
+	}
+	
+	public function actionBet(array $m){
 		return $this->render('bet', [
 			'a'=>$m[0],
 			'b'=>$m[1],
