@@ -20,9 +20,10 @@ $this->title = 'About';
                 
             ],
             2 => [
-                ['Real Madrid', 'Barcelona', '19/12/2015'],
                 ['Getafe', 'Villarreal', '20/12/2015'],
+                ['Real Madrid', 'Barcelona', '19/12/2015'],
                 ['At. Madrid', 'Sevilla', '21/12/2015'],
+                
             ]
         ];
         foreach($tabs as $i=>$matches){
