@@ -24,15 +24,17 @@ $this->title = 'About';
                 ['Real Madrid', 'Barcelona', '19/12/2015'],
                 ['At. Madrid', 'Sevilla', '21/12/2015'],
                 
-            ]
+            ],
+			3 => [
+				
+			]
         ];
         foreach($tabs as $i=>$matches){
             foreach($matches as $m){
-
                 ${"tab".$i} .= Html::tag("div", Html::tag("div",
                         Html::tag("div", "$m[0] vs. $m[1]", ['class' => 'col-md-4 match']).
                         Html::tag("div", "$m[2]", ['class' => 'col-md-4 date']).
-                        Html::tag("div", Html::a("Apostar", ['bet', ['m'=>$m]], 
+                        Html::tag("div", Html::a("Apostar", ['bet', 'm'=>$m],
                                 ['class' => 'btn btn-sm btn-success pull-right']), 
                                 ['class' => 'col-md-4']), 
                         ['class' => 'row']),
