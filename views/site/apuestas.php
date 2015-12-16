@@ -4,6 +4,7 @@ use yii\helpers\Html;
 $this->title = "Mis apuestas";
 
 echo Html::beginForm('', 'post', ["class"=>"site-bet"]);
+echo Html::tag('h3', $this->title);
 
 foreach($bets as $b){
 	$quantity = 0;

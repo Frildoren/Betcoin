@@ -81,7 +81,8 @@ $items = [
 		<div class="wrap">
 		<?php
 		NavBar::begin([
-			'brandLabel' => Yii::$app->params['name'],
+			'brandLabel' => Html::img('@web/img/logo.png', ['alt'=>Yii::$app->params['name']]),
+			'brandOptions' => ['class'=>'brandLogo'],
 			'brandUrl' => Yii::$app->homeUrl,
 			'options' => [
 				'class' => 'navbar-default navbar-fixed-top',
