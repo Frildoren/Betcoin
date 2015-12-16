@@ -24,7 +24,7 @@ $items = [
     
     // Important: you need to specify url as 'controller/action',
     // not just as 'controller' even if default action is used.
-    ['label' => Icon::show('football-soccer').'Fútbol', 'url' => Url::to(['/site/apuesta', 'type' => $type]), 'active' => false],
+    ['label' => Icon::show('football-soccer').'Fútbol', 'url' => Url::to(['/site/apuesta', 'sport' => 'Fútbol',]), 'active' => false],
     ['label' => Icon::show('basketball').'Baloncesto', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
     ['label' => Icon::show('raceflag').'Fórmula 1', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
     ['label' => Icon::show('usfootball').'Rugby', 'url' => Url::to(['/site/home', 'type' => $type]), 'active' => false],
